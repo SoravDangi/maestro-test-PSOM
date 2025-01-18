@@ -1,0 +1,258 @@
+appId: com.psom.ofmuziq
+name: Flow without Script
+onFlowStart:
+  - runFlow: setup-signin.yaml
+---
+- tapOn: "Learn"
+- tapOn:
+    text: "Micro Learning"
+    index: 1
+- tapOn: "Superset"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "42%,58%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "New microlearning"
+- assertVisible: "Buy, ₹8,000"
+- assertVisible: "Starting from 28th Nov 2025"
+- assertVisible: "5 Days course - Live"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "62%,91%" # need to check this
+- assertVisible: "test"
+- tapOn: "Buy, ₹8,000"
+- assertVisible: "New microlearning"
+- assertVisible:
+    text: "₹8,000"
+    index: 1
+- tapOn: "Pay Now"
+- assertVisible: "Checkout"
+- extendedWaitUntil:
+    visible: "UPI googlepay phonepe paytm"
+    timeout: 60000
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "failure@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is not confirmed"
+- assertVisible: "Order number"
+- tapOn: "RAISE A TICKET"
+- assertVisible: "New microlearning"
+- "back"
+- tapOn: "Pay Now"
+- waitForAnimationToEnd:
+    timeout: 8000
+- assertVisible: "Checkout"
+- tapOn: "Cards Cards VISA MC RUPAY"
+ # click on card visa
+- tapOn:
+    point: "50%,34%"
+- inputText: "4111111111111111"
+- tapOn:
+    point: "27%,39%"
+- inputText: "0950"
+- tapOn:
+    point: "73%,39%"
+- inputText: "123"
+- tapOn:
+    point: "50%,43%"
+- inputText: "test"
+- tapOn: "Continue"
+- tapOn: "Maybe later"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "50%,51%"
+- inputText: "123"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 60000
+- assertVisible: "Your Payment is not confirmed"
+- assertVisible: "Order number"
+- tapOn: "RAISE A TICKET"
+- assertVisible:
+    text: "New microlearning"
+    index: 0
+- assertVisible:
+    text: "MICROCOURSE"
+    index: 0
+- tapOn:
+    point: "7%,9%"
+- tapOn: "Pay Now"
+- assertVisible: "Checkout"
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "success@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is confirmed!"
+- tapOn:
+    point: "6%,8%"
+- assertVisible: "View"
+- tapOn: "View"
+- assertVisible: "Current And Upcoming"
+- assertVisible: "New microlearning"
+- tapOn:
+    point: "90%,31%"
+- assertVisible: "Click to join"
+- assertVisible: "Download Invoice"
+- tapOn:
+    point: "50%,51%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "9%,9%"
+- assertVisible:
+    text: "All"
+    index: 0
+- tapOn:
+    text: "All"
+    index: 0
+- assertVisible: "New microlearning"
+- tapOn:
+    point: "7%,9%"
+- tapOn: "New course"
+- tapOn:
+    point: "37%,62%"
+- tapOn:
+    point: "91%,9%"
+- assertVisible: "http://3.111.89.121:8081/app/microcourse/MICCOR-TQWAE9MCOE"
+- assertVisible:
+    id: "android:id/chooser_copy_button"
+- assertVisible:
+    id: "android:id/chooser_nearby_button"
+- tapOn:
+    point: "50%,50%"
+- assertVisible: "New micro"
+- scrollUntilVisible:
+    element: "Automicrolearnings"
+    direction: "DOWN"
+- tapOn:
+    point: "9%,9%"
+- tapOn:
+    point: "94%,30%"
+- scrollUntilVisible:
+    element: "Flute"
+    direction: "DOWN"
+- assertVisible: "Flute"
+
+#- tapOn:
+#    point: "54%,9%"
+#- inputText: "learn guitar"
+#- assertVisible: "Learn Guitar"
+#- eraseText: {}
+#- inputText: "flute"
+#- assertVisible: "Flute new microlearning"
+#- assertVisible:
+#    text: "Flute"
+#    index: 1
+#- assertVisible: "Expired on 2nd Nov 2024" 
+- tapOn:
+    point: "9%,9%"
+- tapOn:
+    point: "10%,22%"
+- assertVisible: "Current And Upcoming"
+- tapOn:
+    point: "90%,30%"
+- assertVisible: "Click to join"
+- assertVisible: "Download Invoice"
+- tapOn:
+    point: "50%,51%"
+#- tapOn:
+#    point: "54%,17%"
+#- waitForAnimationToEnd:
+#    timeout: 5000
+#- inputText: "new micross"
+#- waitForAnimationToEnd:
+#    timeout: 5000
+#- assertVisible: "No Current And Upcoming Course"
+#- tapOn:
+#    point: "9%,9%"
+#- tapOn:
+#    point: "9%,9%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "9%,30%"
+- tapOn:
+    point: "38%,62%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "View"
+- tapOn:
+    point: "9%,9%"
+- tapOn:
+    point: "90%,95%"
+- assertVisible: "New microlearning"
+- tapOn:
+    point: "88%,46%"
+- tapOn: "Micro-courses"
+- assertVisible: "New microlearning"
+- tapOn:
+    point: "88%,46%"
+- tapOn: "Courses"
+- assertVisible: "No Purchase History"
+- tapOn: "View Profile"
+- tapOn:
+    point: "94%,46%"
+- assertVisible:
+    text: "New microlearning"
+    index: 0
+- assertVisible:
+    text: "New microlearning"
+    index: 1
+- tapOn:
+    point: "50%,30%"
+- assertVisible: "New microlearning"
+- tapOn:
+    point: "81%,94%"
+- tapOn:
+    point: "53%,86%"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- waitForAnimationToEnd:
+    timeout: 8000
+- assertVisible:
+    text: "Image"
+    index: 1
+- tapOn:
+    point: "42%,94%"
+- inputText: "test@123"
+- tapOn:
+    point: "89%,60%"
+- assertVisible:
+    text: "test@123"
+    index: 1
+- tapOn:
+    point: "9%,9%"
+- tapOn: "Search Tickets"
+- inputText: "neww"
+- assertVisible: "No Current Issues"
+- eraseText: {}
+- inputText: "new micro"
+- assertVisible:
+    text: "New microlearning"
+    index: 0
+- tapOn:
+    point: "9%,8%"
+- tapOn:
+    point: "9%,8%"
+- tapOn:
+    point: "7%,9%"
+- assertVisible: "Testt new auto"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"
