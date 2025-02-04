@@ -1,0 +1,65 @@
+appId: com.psom.ofmuziq
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000
+- tapOn: "Mobile Number"
+- inputText: "685698561"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Mobile number must be at least 10 characters."
+- eraseText: {}
+- inputText: "5856985613"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Enter valid mobile number."
+- eraseText: {}
+- inputText: "7"
+- inputRandomNumber:
+    length: 9
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Agree to receive notifications via WhatsApp and never miss a thing!"
+- tapOn:
+    point: "9%,37%"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "OTP Verification"
+- tapOn:
+    id: "otp_input_0"
+- inputText: "789456"
+- tapOn: "SUBMIT"
+- assertVisible: "Invalid Otp!!"
+- tapOn:
+    point: "8%,50%"
+- tapOn: "Terms of Service"
+- assertVisible: "Guidelines"
+- pressKey: "BACK"
+- assertVisible: "Book a Free Session"
+- tapOn: "Privacy policy"
+- assertVisible: "Privacy\_"
+- pressKey: "BACK"
+- tapOn: "Log in/Sign up"
+- assertVisible: "Log in/Sign Up"
+- tapOn: "Book a Free Session"
+- assertVisible: "Book a Free Session"
+- tapOn: "Log in/Sign up"
+- tapOn: "Next"
+- tapOn:
+    id: "otp_input_0"
+- inputText: "78945"
+- tapOn: "SUBMIT"
+- assertVisible: "Please enter a valid 6-digit OTP"
+- tapOn:
+    id: "otp_input_5"
+- inputText: "7"
+- tapOn: "SUBMIT"
+- assertVisible: "Invalid Otp!!"
+- extendedWaitUntil:
+    visible: "Didn't get the OTP? Resend SMS"
+    timeout: 300000
+- tapOn:
+    point: "64%,84%"
+- assertVisible:
+    id: "toastText1"
+- extendedWaitUntil:
+    visible: "Let's create your account"
+    timeout: 250000

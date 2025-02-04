@@ -1,0 +1,270 @@
+appId: com.psom.ofmuziq
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000
+- tapOn: "Mobile Number"
+- inputText: "9416952935"
+- tapOn:
+    point: "9%,37%"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "OTP Verification"
+- extendedWaitUntil:
+    visible: "Upcoming Events"
+    timeout: 250000
+- assertVisible: "You are not eligible for book session"
+- assertNotVisible: "Book your free session online"
+
+- tapOn: "Profile"
+- assertVisible: "Teacher"
+- tapOn:
+    point: "93%,9%"
+- tapOn:
+    point: "50%,50%"
+- tapOn:
+    point: "42%,94%"
+- inputText: "Test@123"
+- tapOn:
+    point: "89%,60%"
+- assertVisible:
+    text: "Test@123"
+    index: 1
+#- tapOn:
+#   point: "81%,94%" 
+- longPressOn:
+    point: "85%,54%"
+- tapOn:
+    point: "93%,9%"
+- tapOn: "Confirm"
+- assertNotVisible: "Test@123"
+- tapOn:
+    point: "81%,94%"
+- tapOn:
+    point: "53%,86%"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- waitForAnimationToEnd:
+    timeout: 5000 
+- tapOn:
+    point: "64%,70%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "uploaded image 1"
+- "back"
+- tapOn:
+    point: "81%,94%"
+- tapOn:
+    point: "53%,82%"
+- tapOn:
+    point: "50%,91%"
+- tapOn: "Done"
+- waitForAnimationToEnd:
+    timeout: 8000  
+- tapOn:
+    point: "64%,70%"
+- waitForAnimationToEnd:
+    timeout: 8000 
+- takeScreenshot: "uploaded image 2"
+- "back"
+- tapOn:
+    point: "9%,9%"
+- tapOn: "Search Messages"
+- inputText: "Raman"
+- assertVisible: "Raman Singh"
+- tapOn:
+    point: "11%,8%"
+- tapOn: "Help & Support"
+- tapOn:
+    point: "50%,30%"
+- tapOn:
+    point: "42%,94%"
+- inputText: "Test@1234"
+- tapOn:
+    point: "89%,60%"
+- waitForAnimationToEnd:
+    timeout: 5000 
+- assertVisible:
+    text: "Test@1234"
+    index: 1
+- tapOn:
+    point: "81%,60%"
+- tapOn:
+    point: "53%,52%"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- waitForAnimationToEnd:
+    timeout: 8000     
+- tapOn:
+    point: "64%,70%"
+- waitForAnimationToEnd:
+    timeout: 8000    
+- takeScreenshot: "uploaded image 3"
+- "back"
+- tapOn:
+    point: "81%,94%"
+- tapOn:
+    point: "53%,86%"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- waitForAnimationToEnd:
+    timeout: 8000 
+- tapOn:
+    point: "64%,70%"
+- waitForAnimationToEnd:
+    timeout: 8000 
+- takeScreenshot: "uploaded image 4"
+- "back"
+- tapOn:
+    point: "9%,9%"
+- tapOn:
+    point: "54%,23%"
+- inputText: "enroll leads"
+- assertVisible:
+    text: "Enroll leads"
+    index: 1
+- tapOn:
+    point: "11%,9%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "30%,95%"
+- assertVisible: "September"
+- assertVisible:
+    text: "Active"
+    index: 0
+- assertVisible:
+    text: "Forfeit"
+    index: 0
+- "scroll"
+- "scroll"
+- scrollUntilVisible:
+    element: "Reschedule For Later"
+    direction: "DOWN"
+- tapOn:
+    text: "Profile"
+    index: 1
+- tapOn:
+    point: "59%,26%"
+- tapOn: "SELECT MEDIA FROM GALLERY"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- assertVisible: "Profile picture updated successfully!"
+- tapOn:
+    point: "59%,26%"
+- tapOn: "USE CAMERA"
+- tapOn:
+    point: "50%,91%"
+- tapOn:
+    point: "50%,91%"
+- assertVisible: "Profile picture updated successfully!"
+- tapOn:
+    point: "50%,95%"
+- tapOn:
+    text: "New test event"
+    index: 1
+- tapOn: "Book Tickets Now"
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn: "Proceed"
+- tapOn: "Pay Now"
+- waitForAnimationToEnd:
+    timeout: 8000 
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "Success@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is confirmed!"
+- tapOn:
+    point: "6%,8%"
+- tapOn:
+    point: "8%,8%"
+- tapOn:
+    point: "93%,9%"
+- assertVisible: "New test event"
+- tapOn:
+    point: "88%,30%"
+- assertVisible:
+    text: "New test event"
+    index: 1
+- assertVisible: "2 Tickets"
+- tapOn:
+    point: "52%,81%"
+- tapOn:
+    point: "6%,30%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "90%,93%"
+- assertVisible: "Purchase History"
+- assertVisible: "New test event"
+- tapOn:
+    point: "91%,46%"
+- tapOn: "Events"
+- assertVisible: "New test event"
+- tapOn: "View Profile"
+- tapOn:
+    point: "94%,47%"
+- assertVisible: "Help and Support"
+- assertVisible: "Current"
+- assertVisible: "Resolved"
+- tapOn:
+    point: "50%,31%"
+- tapOn:
+    point: "42%,94%"
+- inputText: "test@1234"
+- tapOn:
+    point: "89%,60%"
+- assertVisible:
+    text: "test@1234"
+    index: 1
+- tapOn:
+    point: "81%,60%"
+- tapOn:
+    point: "53%,52%"
+- tapOn:
+    point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- waitForAnimationToEnd:
+    timeout: 5000   
+- assertVisible:
+    text: "Image"
+    index: 1
+- tapOn:
+    point: "81%,94%"
+- tapOn:
+    point: "53%,82%"
+- tapOn:
+    point: "50%,91%"
+- tapOn:
+    point: "50%,91%"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    text: "Image"
+    index: 3
+- tapOn:
+    point: "9%,9%"
+- tapOn:
+    point: "7%,9%"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"

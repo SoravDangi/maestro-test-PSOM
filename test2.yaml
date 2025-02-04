@@ -1,0 +1,118 @@
+appId: com.psom.ofmuziq
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000
+- tapOn: "Log in/Sign up"
+- tapOn: "Mobile Number"
+- tapOn: "Next"
+- assertVisible: "Mobile number is required."
+- inputText: "78999456"
+- tapOn: "Next"
+- assertVisible: "Mobile number must be at least 10 characters."
+- eraseText: {}
+- inputText: "5945652531"
+- tapOn: "Next"
+- assertVisible: "Enter valid mobile number."
+- eraseText: {}
+- inputText: "7"
+- inputRandomNumber:
+    length: 9
+- tapOn: "Book a Free Session"
+- assertVisible: "Book a Free Session"
+- tapOn: "Log in/Sign up"
+- tapOn: "Next"
+- extendedWaitUntil:
+    visible: "Let's create your account"
+    timeout: 250000
+- tapOn: "SIGN UP"
+- assertVisible: "First name is required"
+- assertVisible: "Last name is required"
+- assertVisible: "Email is required"
+- tapOn: "First Name"
+- inputText: "Test new"
+- tapOn: "Last name"
+- inputText: "auto"
+- tapOn:
+    point: "50%,42%"
+- tapOn: "Your birthday"
+- tapOn: "OK"
+- tapOn: "Your email ID"
+- inputText: "test1@gmail.com"
+- tapOn:
+    point: "91%,59%"
+- tapOn:
+    point: "91%,59%"
+- tapOn: "Search..."
+- inputText: "faridabad"
+- tapOn:
+    point: "89%,30%"
+- tapOn:
+    point: "89%,66%"
+- assertVisible: "Faridabad"
+- tapOn:
+    point: "91%,67%"
+- tapOn: "Search..."
+- inputText: "flute"
+- tapOn:
+    point: "89%,30%"
+- tapOn:
+    point: "89%,66%"
+- assertVisible: "Flute"
+- tapOn: "SIGN UP"
+- assertVisible: "Upcoming Events"
+- tapOn: "Profile"
+- assertVisible: "Test new auto"
+- assertVisible: "User"
+- tapOn:
+    point: "10%,95%"
+- assertVisible: "No upcoming classes"
+- repeat:
+    while:
+      visible: "Book your free session online"
+    commands:
+    - tapOn: "Book your free session online"
+- assertVisible: "Test new"
+- assertVisible: "auto"
+- assertVisible: "test1@gmail.com"
+- tapOn:
+    point: "48%,26%"
+- tapOn:
+    point: "91%,72%"
+- tapOn:
+    point: "90%,67%"
+- tapOn: "PROCEED"
+- assertVisible: "Sector 38, GGN"
+- tapOn:
+    point: "91%,81%"
+- tapOn:
+    point: "48%,52%"
+- tapOn:
+    point: "26%,61%"
+- tapOn: "DONE"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Your free session is confirmed!"
+- assertVisible: "Sector 38, Gurugram - Click here for location"
+- assertVisible: "Gurugram Center Coordinator"
+- tapOn: "Continue"
+- assertVisible: "Free Session - A"
+- assertVisible: "Get Directions to the Gurugram Center"
+- assertVisible: "You have 1 Upcoming Free Session"
+- tapOn:
+    point: "90%,93%"
+- tapOn:
+    point: "59%,26%"
+- tapOn: "SELECT MEDIA FROM GALLERY"
+- tapOn:
+    point: "12%,36%"
+  #- tapOn:
+   # point: "20%,39%"
+- tapOn:
+    point: "94%,6%"
+- takeScreenshot: "MainScreen"
+- tapOn: "View Profile"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"

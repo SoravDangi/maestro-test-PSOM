@@ -1,0 +1,223 @@
+appId: com.psom.ofmuziq
+name: Flow without Script
+onFlowStart:
+  - runFlow: setup-signin.yaml
+---
+- tapOn: "Learn"
+- assertVisible:
+    text: "Courses"
+    index: 1
+- tapOn:
+    text: "Explore"
+    index: 5
+- assertVisible: "I234"
+- assertVisible: "Buy Now"
+- assertVisible: "Schedule Demo Call"
+- tapOn: "Schedule Demo Call"
+- tapOn:
+    point: "90%,65%"
+- tapOn: "Proceed"
+- assertVisible: "No slots are available for this course"
+- tapOn:
+    point: "6%,47%"
+- tapOn: "Buy Now"
+- tapOn: "3mo"
+- tapOn:
+    text: "Select"
+    index: 1
+- assertVisible: "No slots are available for this course"
+- "back"
+- "back"
+- "back"
+- scrollUntilVisible:
+    element: "Flute"
+    direction: "DOWN"
+- tapOn:
+    text: "Explore"
+    index: 2
+- assertVisible: "Flute"
+- tapOn: "Schedule Demo Call"
+- tapOn:
+    point: "90%,64%"
+- tapOn: "Proceed"
+- tapOn:
+    point: "13%,54%"
+- startRecording: recording
+- tapOn:
+    point: "26%,63%"
+- tapOn: "Proceed"
+- assertVisible: "Demo Call Confirmation sent to your phone"
+- tapOn:
+    point: "8%,8%"
+- "back"
+- tapOn:
+    text: "Home"
+    index: 1
+# not working due to under development of another feature - assertVisible: "You have 1 Upcoming Free Session"
+- stopRecording
+- assertVisible: "Free Session - Flute"
+- assertVisible: "Get Directions to the Faridabad Center"
+- tapOn:
+    text: "Learn"
+    index: 1
+- tapOn:
+    text: "Explore"
+    index: 4
+- assertVisible: "Guitar"
+- tapOn: "Buy Now"
+- tapOn: "Pay Now"
+- assertVisible: "Please Provide Course duration!"
+- tapOn: "3mo"
+- assertVisible:
+    text: "₹12,000"
+    index: 0
+- tapOn: "6mo"
+- assertVisible:
+    text: "₹24,000"
+    index: 0
+- tapOn: "12mo"
+- assertVisible:
+    text: "₹48,000"
+    index: 0
+- tapOn: "3mo"
+- tapOn: "Pay Now"
+- assertVisible: "Please Provide time slots!"
+- tapOn:
+    text: "Select"
+    index: 1
+- tapOn:
+    point: "13%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn:
+    point: "48%,54%"
+- tapOn: "DONE"
+- assertVisible: "Don’t forget to pick both a date and a time!"
+- tapOn:
+    point: "26%,63%"
+- tapOn: "DONE"
+- tapOn: "Pay Now"
+- assertVisible: "Please Provide location!"
+- tapOn: "Select"
+- tapOn:
+    point: "90%,68%"
+- tapOn: "PROCEED"
+- tapOn:
+    text: "Select"
+- tapOn:
+    point: "13%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn:
+    point: "48%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn: "DONE"
+- tapOn: "Pay Now"
+- assertVisible: "Checkout"
+- waitForAnimationToEnd:
+    timeout: 6000
+- tapOn: "Cards VISA MC RUPAY"
+- waitForAnimationToEnd:
+    timeout: 3000
+- tapOn:
+    point: "50%,30%"
+#- tapOn: "Card Number"
+- inputText: "4111111111111111"
+- tapOn:
+    point: "27%,35%"
+#- tapOn: "MM / YY"
+- inputText: "0952"
+- tapOn:
+    point: "73%,35%"
+#- tapOn: "CVV"
+- inputText: "001"
+- tapOn:
+    point: "50%,40%"
+#- tapOn: "Enter name on card"
+- inputText: "test"
+- tapOn: "Continue"
+- tapOn: "Maybe later"
+#- tapOn: "Enter OTP"
+- inputText: "23"
+- tapOn:
+    point: "50%,62%"    
+#- tapOn:
+ #   text: "Continue"
+  #  index: 0
+
+- assertVisible: "Your Payment is not confirmed"
+- assertVisible: "RAISE A TICKET"
+- tapOn: "RAISE A TICKET"
+- assertVisible: "Guitar"
+- "back"
+- tapOn: "Pay Now"
+- waitForAnimationToEnd:
+    timeout: 6000
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "success@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is confirmed!"
+- "back" 
+- "back"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "My Courses"
+- assertVisible: "Manage"
+- assertVisible: "Active"
+- assertVisible: "Practice"
+- tapOn: "Practice"
+- assertVisible:
+    text: "Guitar"
+    index: 1
+- assertVisible: "Day 1"
+- tapOn:
+    point: "22%,42%"
+- assertVisible: "Practice Session"
+- tapOn:
+    point: "7%,6%"
+- tapOn: "NO, I'm Done for Today"
+- tapOn:
+    text: "Home"
+    index: 1
+- assertVisible: "You're on a 0-day streak"
+- assertVisible: "Streak Level 1"
+- tapOn: "Profile"
+- assertVisible: "Student"
+- assertVisible: "Guitar"
+- tapOn:
+    point: "91%,46%"
+- tapOn: "Courses"
+- assertVisible: "Guitar"
+- tapOn: "View Profile"
+- tapOn: "Help and Support"
+- assertVisible: "Guitar"
+- tapOn:
+    point: "50%,25%"
+- tapOn: "Explain your issue"
+- inputText: "test issue"
+- tapOn:
+    point: "89%,60%"
+- assertVisible:
+    text: "test issue"
+    index: 1
+- tapOn:
+    point: "81%,60%"
+- tapOn: "Image, "
+- tapOn:
+    id: "com.google.android.documentsui:id/icon_thumb"
+- tapOn: "Crop"
+- assertVisible:
+    text: "Image"
+    index: 1
+- "back"
+- "back"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"
+- assertVisible: "Book a Free Session"

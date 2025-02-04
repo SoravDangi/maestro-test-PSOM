@@ -1,0 +1,188 @@
+appId: com.psom.ofmuziq
+name: Flow without Script
+onFlowStart:
+  - runFlow: setup-signin.yaml
+---
+- tapOn: "Learn"
+- assertVisible:
+    text: "Courses"
+    index: 1
+- tapOn:
+    text: "Explore"
+    index: 4
+- assertVisible: "Guitar"
+- tapOn: "Buy Now"
+- tapOn: "3mo"
+- tapOn:
+    text: "Select"
+    index: 0
+- tapOn:
+    point: "90%,68%"
+- tapOn: "PROCEED"
+- tapOn: "Select, "
+- tapOn:
+    point: "13%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn: "DONE"
+- tapOn: "Pay Now"
+- waitForAnimationToEnd:
+    timeout: 7000
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "success@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is confirmed!"
+- startRecording: reschedule_slot_bug_recording
+- "back"
+- "back"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "My Courses"
+- tapOn: "Manage"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    text: "Active"
+    index: 0
+- assertVisible:
+    text: "Guitar  "
+    index: 1   
+- repeat:
+    while:
+      notVisible: "Select Reschedule Slot"
+    commands:
+    - tapOn: "Active, "    
+#- tapOn:
+ #   text: "Active"
+ #   index: 0
+- assertVisible: "Select Reschedule Slot"
+- tapOn:
+    point: "13%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn: "DONE"
+- waitForAnimationToEnd:
+    timeout: 9000
+#- assertVisible: "Class rescheduled successfully!"
+- assertVisible: "Active (R-1)"
+- assertVisible:
+    text: "Guitar  "
+    index: 1 
+- waitForAnimationToEnd:
+    timeout: 5000
+# this point is clicked to surpass bug 
+- tapOn:
+    point: "50%,17%"
+
+- repeat:
+    while:
+      notVisible: "Select Reschedule Slot"
+    commands:
+    - tapOn: "Active, "  
+- tapOn:
+    point: "30%,54%"
+- tapOn:
+    point: "26%,63%"
+- tapOn: "DONE"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "Active (R-2)"
+- assertVisible:
+    text: "Guitar  "
+    index: 1 
+- waitForAnimationToEnd:
+    timeout: 5000
+- repeat:
+    while:
+      notVisible: "Select Reschedule Slot"
+    commands:
+    - tapOn: "Active, " 
+- tapOn:
+    point: "13%,54%"
+- tapOn:
+    point: "50%,63%"
+- tapOn: "DONE"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "Active (R-3)"
+- assertVisible:
+    text: "Guitar  "
+    index: 1 
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn: "Active (R-3)"
+- assertVisible: "No more reschedules left for this course."
+- "back"
+- stopRecording
+- tapOn:
+    text: "Home"
+    index: 1
+- assertVisible: "You're on a 0-day streak"
+- assertVisible: "Streak Level 1"
+- tapOn:
+    text: "Practice"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 6000
+- assertVisible:
+    text: "Guitar"
+    index: 1
+- tapOn:
+    point: "22%,40%"
+- assertVisible: "Practice Session"
+- tapOn:
+    point: "94%,6%"
+- assertVisible: "Metronome"
+- tapOn:
+    point: "88%,82%"
+- tapOn:
+    point: "12%,82%"
+- "back"
+- "back"
+- assertVisible: "C'mon you can do it"
+- tapOn: "NO, I'm Done for Today"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "22%,59%"
+- "back"
+- tapOn:
+    point: "93%,7%"
+- assertVisible: "My Teachers"
+- assertVisible:
+    text: "Messages"
+    index: 1
+- assertVisible: "No Teacher Assigned"
+- "back"
+- tapOn:
+    text: "Practice"
+    index: 1
+- assertVisible: "Practice"
+- assertVisible:
+    text: "Guitar"
+    index: 1
+- tapOn:
+    point: "94%,13%"
+- assertVisible:
+    text: "17"
+    index: 0
+- tapOn:
+    point: "94%,13%"
+- "back"
+
+#- tapOn:
+#    text: "Profile"
+#    index: 1
+- tapOn:
+    point: "90%,95%"
+- assertVisible: "Guitar"
+- assertVisible: "Student"
+- tapOn: "View Profile"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"

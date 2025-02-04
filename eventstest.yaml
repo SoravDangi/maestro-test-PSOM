@@ -1,0 +1,232 @@
+appId: com.psom.ofmuziq
+name: test events flow
+onFlowStart:
+  - runFlow: setup-signin.yaml
+---
+- tapOn:
+    point: "50%,94%"
+- tapOn:
+    text: "New test event"
+    index: 1
+
+- assertVisible: "Join us for a creative 2-hour jam session in Faridabad, powered\
+    \ by our microlearning community! Bring your old guitar or any instrument, and\
+    \ let’s make some music together. Choose your session: 9th, 10th, or join both\
+    \ days! Perfect for all levels—whether you're a beginner or a seasoned musician,\
+    \ come to connect, learn, and create with us. Book your spot now in the Ofmuziq\
+    \ app and be part of the vibe! Join us for a creative 2-hour jam session in Faridabad,\
+    \ powered by our microlearning community!"
+- takeScreenshot: "beforeinterested"
+- tapOn:
+    point: "78%,8%"
+- takeScreenshot: "afterinterested"
+- tapOn: "Click for location"
+- assertVisible: "G K Mill Store"
+- tapOn: "Back"
+- tapOn: "View T&C"
+- assertVisible: "Important Information"
+- assertVisible: "For any assistance during the event, please approach the venue staff.\
+    \ Rights of admission are reserved by Ofmuziq."
+- takeScreenshot: "events t&c bottomsheet"
+- tapOn:
+    point: "6%,11%"
+- tapOn: "Book Tickets Now"
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn: "Add"
+- tapOn:
+    point: "85%,38%"
+- tapOn:
+    point: "85%,47%"
+- tapOn:
+    point: "85%,55%"
+- tapOn:
+    point: "70%,55%"
+- assertVisible: "1"
+- tapOn: "Proceed"
+- assertVisible:
+    text: "₹9,998"
+    index: 0
+- assertVisible: "early bird (x2)"
+- assertVisible: "simple pass (x2)"
+- assertVisible: "VIP pass (x1)"
+- tapOn: "Pay Now"
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "failure@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is not confirmed"
+- assertVisible: "In case your amount has been deducted, the same will be refunded\
+    \ in the next 7-8 business days."
+- assertVisible: "RAISE A TICKET"
+- tapOn: "RAISE A TICKET"
+- assertVisible: "Help and Support"
+- assertVisible: "New test event"
+- assertVisible: "No Resolved Issues"
+- tapOn:
+    point: "7%,9%"
+- tapOn: "Pay Now"
+- tapOn: "UPI googlepay phonepe paytm"
+- tapOn:
+    point: "50%,36%"
+- inputText: "Success@razorpay"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 30000
+- assertVisible: "Your Payment is confirmed!"
+- tapOn:
+    point: "6%,8%"
+- tapOn:
+    point: "8%,8%"
+- tapOn: "My Tickets"
+- assertVisible:
+    text: "New test event"
+    index: 0
+- assertVisible:
+    text: "New test event"
+    index: 1
+- tapOn: "View"
+- assertVisible: "5 Tickets"
+- tapOn:
+    point: "46%,81%"
+- tapOn:
+    point: "57%,81%"
+- tapOn:
+    point: "6%,30%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "26%,54%"
+- assertVisible: "Wed, Dec 31, 4:00 PM"
+- tapOn:
+    point: "62%,54%"
+- assertVisible: "Thu, Jul 17, 4:00 PM"
+- tapOn:
+    point: "46%,54%"
+- tapOn:
+    point: "7%,54%"
+- tapOn:
+    text: "Test event"
+    index: 1
+- tapOn: "Click for location"
+- assertVisible: "G K Mill Store"
+- "back"
+- tapOn: "Book Tickets Now"
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn: "Add"
+- tapOn: "Proceed"
+- assertVisible: "simple pass  (x1)"
+- assertVisible: "VIP pass (x1)"
+- assertVisible:
+    text: "₹6,000"
+    index: 1
+- tapOn: "Pay Now"
+- tapOn: "Cards VISA MC RUPAY"
+- tapOn:
+    point: "50%,34%"
+- inputText: "4111111111111111"
+- tapOn:
+    point: "27%,39%"
+- inputText: "0950"
+- tapOn:
+    point: "73%,39%"
+- inputText: "123"
+- tapOn:
+    point: "50%,43%"
+- inputText: "test"
+- tapOn: "Continue"
+- tapOn: "Maybe later"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "50%,51%"
+- inputText: "123"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 60000
+- assertVisible: "Your Payment is not confirmed"
+- assertVisible: "Uh-Oh"
+- assertVisible: "RAISE A TICKET"
+- tapOn: "RAISE A TICKET"
+- assertVisible: "Test event"
+- tapOn:
+    point: "7%,9%"
+- tapOn: "Pay Now"
+- tapOn: "Cards VISA MC RUPAY"
+- tapOn:
+    point: "50%,34%"
+- inputText: "4111111111111111"
+- tapOn:
+    point: "27%,39%"
+- inputText: "0950"
+- tapOn:
+    point: "73%,39%"
+- inputText: "123"
+- tapOn:
+    point: "50%,43%"
+- inputText: "test"
+- tapOn: "Continue"
+- tapOn: "Maybe later"
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    point: "50%,51%"
+- inputText: "1236777"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Order number"
+    timeout: 60000
+- assertVisible: "Your Payment is confirmed!"
+- assertVisible: "Confirmation"
+- tapOn:
+    point: "6%,8%"
+- tapOn:
+    point: "8%,8%"
+- tapOn: "My Tickets"
+- tapOn:
+    text: "View"
+    index: 0
+- assertVisible:
+    text: "Test event"
+    index: 1
+- tapOn:
+    point: "52%,81%"
+- assertVisible: "2 Tickets"
+- tapOn:
+    point: "6%,30%"
+- tapOn:
+    point: "7%,9%"
+- tapOn:
+    point: "90%,93%"
+- assertVisible: "Testt new auto"
+- assertVisible: "User"
+- assertVisible: "New test event"
+- assertVisible: "Test event"
+- tapOn:
+    point: "88%,46%"
+- tapOn: "Events"
+- assertVisible: "New test event"
+- tapOn: "View Profile"
+- tapOn:
+    point: "94%,47%"
+- assertVisible: "New test event" # bug $ this is be removed - bug fixed
+- assertVisible: "Test event" # bug $ this icon shoud be remove - bug fixed
+- tapOn:
+    point: "7%,9%"
+- tapOn: "Log Out"
+- tapOn: "Confirm"
+- assertVisible: "Book a Free Session"
+- assertVisible: "Book a Free Session"
+- assertVisible: "Book a Free Session"

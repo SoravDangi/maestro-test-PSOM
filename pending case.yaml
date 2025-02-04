@@ -1,0 +1,38 @@
+appId: com.psom.ofmuziq
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000
+- tapOn: "Mobile Number"
+- inputText: "9876543211"
+- tapOn: "Next"
+- assertVisible: "OTP Verification"
+- extendedWaitUntil:
+    visible: "Upcoming Events"
+    timeout: 250000
+  tapOn: "Next"
+- tapOn: "Profile"
+- assertVisible: "Imran Test"
+- assertVisible: "Student"
+- assertVisible: "Switch Profile"
+- tapOn: "Switch Profile"
+- assertVisible:
+    text: "Switch Profile"
+    index: 1
+- tapOn:
+    point: "90%,69%"
+- tapOn:
+    point: "90%,61%"
+- tapOn: "DONE"
+- assertVisible: "Raman Singh"
+- tapOn: "Switch Profile"
+- assertVisible:
+  text: "Switch Profile"
+  index: 1
+- tapOn:
+   point: "90%,76%"
+- tapOn: "DONE"
+- assertVisible: "Sonu Singh"
+- assertVisible: "Teacher"

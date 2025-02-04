@@ -1,0 +1,30 @@
+appId: com.psom.ofmuziq
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000
+- tapOn: "Log in/Sign up"
+- tapOn: "Mobile Number"
+- inputText: "7"
+- inputRandomNumber:
+    length: 9
+- tapOn: "Next"
+- extendedWaitUntil:
+    visible: "Let's create your account"
+    timeout: 250000
+- tapOn: "First Name"
+- inputText: "Testt new"
+- tapOn: "Last name"
+- inputText: "auto"
+#- tapOn:
+#    point: "50%,42%"
+- tapOn: "Your email ID"
+- inputText: "test1@gmail.com"
+- tapOn:
+    point: "91%,59%"
+- tapOn: "SIGN UP"
+- extendedWaitUntil:
+    visible: "Upcoming Events" # or any other selector
+    timeout: 10000

@@ -1,0 +1,119 @@
+appId: com.psom.ofmuziq
+--- 
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: "Book a Free Session" # or any other selector
+    timeout: 100000 
+- tapOn: "Mobile Number"
+- inputText: "8"
+- inputRandomNumber:
+    length: 9
+- tapOn:
+    point: "9%,37%"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "OTP Verification"
+- extendedWaitUntil:
+    visible: "Choose your Instrument"
+    timeout: 300000
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "First name is required"
+- tapOn: "Email id is required"
+- tapOn: "Slot location is required"
+- tapOn: "Slot time is required"
+- tapOn: "First Name"
+- inputText: "testauto"
+- tapOn: "Your email ID"
+- inputText: "test@gmail.com"
+- tapOn:
+    point: "87%,26%" # for test
+- tapOn:
+    point: "91%,72%"
+- tapOn:
+    point: "90%,73%"
+- tapOn: "PROCEED"
+- tapOn: "BOOK FREE SESSION"
+- tapOn:
+    point: "91%,81%"
+- assertVisible: "Please select course to get available slots!"
+- tapOn:
+    point: "48%,26%"
+- tapOn:
+    point: "91%,81%"
+- tapOn:
+    point: "48%,51%"
+- tapOn: "4:00 PM"
+- tapOn: "DONE"
+- assertVisible: "Sector 10 DLF, FBD"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Sector 10 DLF, Faridabad - Click here for location"
+- assertVisible: "Faridabad Center Coordinator"
+- assertVisible: "+91-9971164159"
+- assertVisible: "Your free session is confirmed!"
+- tapOn: "Continue"
+- assertVisible: "You have 1 Upcoming Free Session"
+- assertVisible: "Free Session - A"
+- assertVisible: "Get Directions to the Faridabad Center"
+- repeat:
+    while:
+      visible: "Book your free session online"
+    commands:
+    - tapOn: "Book your free session online"
+- assertVisible: "Choose your Instrument"
+- assertVisible: "Choose your Instrument"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Slot location is required"
+- assertVisible: "Slot time is required"
+- tapOn:
+    point: "91%,70%"
+- tapOn:
+    point: "90%,80%"
+- tapOn: "PROCEED"
+- tapOn:
+    point: "91%,79%"
+- assertVisible: "Please select course to get available slots!"
+- tapOn:
+    point: "48%,26%"
+- tapOn:
+    point: "91%,79%"
+- tapOn:
+    point: "13%,52%"
+- tapOn:
+    point: "26%,61%"
+- tapOn: "DONE"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Free session already claimed for this instrument"
+- repeat:
+    times: 5
+    commands:
+    - tapOn:
+        point: "87%,26%"
+- tapOn:
+    point: "50%,79%"
+- assertVisible: "No slots are available for this course"
+- tapOn:
+    point: "6%,45%"
+- tapOn:
+    point: "87%,26%"
+- tapOn:
+    point: "50%,79%"
+- tapOn:
+    point: "13%,52%"
+- tapOn:
+    point: "26%,61%"
+- tapOn: "DONE"
+- tapOn: "BOOK FREE SESSION"
+- assertVisible: "Your free session is confirmed!"
+- assertVisible: "Online Center Coordinator"
+- tapOn: "Continue"
+- assertVisible: "Free Session - Jazz"
+- assertVisible: "Get Link for the Online Session"
+- tapOn:
+    text: "Profile"
+    index: 1
+- assertVisible: "testauto "
+- assertVisible: "User"
+- tapOn:
+    text: "Home"
+    index: 1
+- assertVisible: "You have 1 Upcoming Free Session"
