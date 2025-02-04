@@ -221,3 +221,4 @@ onFlowStart:
 - tapOn: "Confirm"
 - assertVisible: "Book a Free Session"
 - assertVisible: "Book a Free Session"
+- assertVisible: "Book a Free Session"
